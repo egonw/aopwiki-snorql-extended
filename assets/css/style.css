@@ -5,8 +5,81 @@
 
 footer{
     height: 50px;
-    background-color: #f5f5f5;
+    background-color: #343a40;
+    color: white;
 }
+
+/* unvisited link */
+a:link {
+  color: orange;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: orange;
+}
+
+/* selected link */
+a:active {
+  color: orange;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #333;
+}
+.btn-success:hover {
+    color: #fff;
+    background-color:darkgreen;
+    border-color: #333;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #333;
+}
+.btn-danger:hover {
+    color: #fff;
+    background-color:darkred;
+    border-color: #333;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #;
+    border-color: #333;
+}
+.btn-warning:hover {
+    color: #fff;
+    background-color:darkorange;
+    border-color: #333;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #333;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color:darkorange;
+    border-color: #333;
+}
+.btn-info {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #333;
+}
+.btn-info:hover {
+    color: #fff;
+    background-color:darkorange;
+    border-color: #333;
+}
+
 
 footer p{
     display: block;
@@ -16,8 +89,13 @@ footer p{
     margin-inline-end: 0px;
 }
 
+
 #result{
   margin-bottom: 50px;
+}
+
+.navbar-default {
+    background-color: #343a40;
 }
 
 .row{

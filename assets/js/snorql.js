@@ -3,7 +3,7 @@ var _examples_repo = "https://github.com/marvinm2/AOPWikiSNORQL";
 var _defaultGraph = "";
 var _namespaces = snorql_namespacePrefixes;
 
-var _poweredByLink = 'https://github.com/marvinm2/snorql-extended';
+var _poweredByLink = 'https://github.com/marvinm2/aopwiki-snorql-extended';
 var _poweredByLabel = 'AOP-Wiki SNORQL';
 
 function setCookie(cname, cvalue){
