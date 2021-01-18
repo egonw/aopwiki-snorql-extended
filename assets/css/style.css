@@ -9,76 +9,102 @@ footer{
     color: white;
 }
 
+
 /* unvisited link */
 a:link {
-  color: orange;
+  color: blue;
 }
 
 /* visited link */
 a:visited {
-  color: green;
+  color: blue;
 }
 
 /* mouse over link */
 a:hover {
-  color: orange;
+  color: darkorgange;
 }
 
 /* selected link */
 a:active {
-  color: orange;
+  color: blue;
 }
 
-.btn-success {
+.btn-default:hover {
     color: #fff;
-    background-color: #5cb85c;
+    background-color: darkred;
     border-color: #333;
+font-weight: bold;
+}
+
+.btn-default {
+   color: #343a40;
+    background-color: #EA9999;
+    border-color: #333;
+font-weight: bold;
+
+}
+.btn-success {
+    color: #343a40;
+    background-color: #B6D7A8;
+    border-color: #333;
+font-weight: bold;
 }
 .btn-success:hover {
     color: #fff;
     background-color:darkgreen;
     border-color: #333;
+font-weight: bold;
 }
 .btn-danger {
-    color: #fff;
-    background-color: #d9534f;
+    color: #343a40;
+    background-color: #EA9999;
     border-color: #333;
+font-weight: bold;
 }
 .btn-danger:hover {
     color: #fff;
     background-color:darkred;
     border-color: #333;
+font-weight: bold;
 }
 .btn-warning {
-    color: #fff;
-    background-color: #;
+    color: #343a40;
+    background-color: #FFE599;
     border-color: #333;
+font-weight: bold;
 }
 .btn-warning:hover {
     color: #fff;
-    background-color:darkorange;
+    background-color:darkgoldenrod;
     border-color: #333;
+font-weight: bold;
 }
 .btn-primary {
-    color: #fff;
-    background-color: #343a40;
+    color: #343a40;
+    background-color: #FFE599;
     border-color: #333;
+font-weight: bold;
 }
 .btn-primary:hover {
     color: #fff;
-    background-color:darkorange;
+    background-color:darkgoldenrod;
     border-color: #333;
+font-weight: bold;
 }
 .btn-info {
-    color: #fff;
-    background-color: #343a40;
+    color: #343a40;
+    background-color: #FFE599;
     border-color: #333;
+font-weight: bold;
 }
 .btn-info:hover {
     color: #fff;
-    background-color:darkorange;
+    background-color:darkgoldenrod;
     border-color: #333;
+font-weight: bold;
 }
+
 
 
 footer p{
