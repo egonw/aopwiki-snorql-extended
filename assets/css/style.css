@@ -7,28 +7,29 @@ footer{
     height: 50px;
     background-color: #343a40;
     color: white;
+    text-align: center;
 }
 
 
 /* unvisited link */
 a:link {
-  color: blue;
+  color: #0492C2;
 }
 
 /* visited link */
 a:visited {
-  color: blue;
+  color: #0492C2;
 }
 
 /* mouse over link */
 a:hover {
-  color: darkorgange;
+  color: darkorange;
 }
 
 /* selected link */
 a:active {
-  color: blue;
-}
+  color: #0492C2;
+
 
 .btn-default:hover {
     color: #fff;
