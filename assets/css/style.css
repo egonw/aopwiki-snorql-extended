@@ -5,21 +5,20 @@
 }
 
 footer{
-    height: 50px;
+    height: 70px;
     background-color: #343a40;
     color: white;
-    text-align: center;
+text-align: center;
 }
-
 
 /* unvisited link */
 a:link {
-  color: #0492C2;
+  color:  #0492C2;
 }
 
 /* visited link */
 a:visited {
-  color: #0492C2;
+  color:  #0492C2;
 }
 
 /* mouse over link */
@@ -29,54 +28,40 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: #0492C2;
-
-
-.btn-default:hover {
-    color: #fff;
-    background-color: darkred;
-    border-color: #333;
-font-weight: bold;
+  color:  #0492C2;
 }
 
-.btn-default {
-   color: #343a40;
-    background-color: #EA9999;
-    border-color: #333;
-font-weight: bold;
-
-}
-.btn-success {
+.btn-run {
     color: #343a40;
     background-color: #B6D7A8;
     border-color: #333;
 font-weight: bold;
 }
-.btn-success:hover {
+.btn-run:hover {
     color: #fff;
     background-color:darkgreen;
     border-color: #333;
 font-weight: bold;
 }
-.btn-danger {
+.btn-reset {
     color: #343a40;
     background-color: #EA9999;
     border-color: #333;
 font-weight: bold;
 }
-.btn-danger:hover {
+.btn-reset:hover {
     color: #fff;
     background-color:darkred;
     border-color: #333;
 font-weight: bold;
 }
-.btn-warning {
+.btn-export {
     color: #343a40;
     background-color: #FFE599;
     border-color: #333;
 font-weight: bold;
 }
-.btn-warning:hover {
+.btn-export:hover {
     color: #fff;
     background-color:darkgoldenrod;
     border-color: #333;
@@ -94,15 +79,27 @@ font-weight: bold;
     border-color: #333;
 font-weight: bold;
 }
-.btn-info {
+.btn-permalink {
     color: #343a40;
-    background-color: #FFE599;
+    background-color: #A2DBFF;
     border-color: #333;
 font-weight: bold;
 }
-.btn-info:hover {
+.btn-permalink:hover {
     color: #fff;
-    background-color:darkgoldenrod;
+    background-color: #4B7A97;
+    border-color: #333;
+font-weight: bold;
+}
+.btn-fullscreen {
+    color: #343a40;
+    background-color: #e7e7e7;
+    border-color: #333;
+font-weight: bold;
+}
+.btn-fullscreen:hover {
+    color: #fff;
+    background-color: #a0a0a0;
     border-color: #333;
 font-weight: bold;
 }
@@ -148,6 +145,46 @@ footer p{
     overflow-y: scroll;
 }
 
+#permalink-url{
+  font-size: 24px;
+  text-align: center;
+}
+
+
+#fullscreen-navbar {
+  display: none;
+  background-color: #f5f5f5;
+}
+
+#fullscreen-navbar .container {
+  text-align: center;
+}
+
+#fullscreen-navbar .row {
+  margin-bottom: 0px;
+}
+
+#fullscreen-navbar input {
+  margin-top:5px;
+  margin-bottom: 5px;
+}
+
+.CodeMirror-fullscreen {
+  top: 44px;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #555;
+    border-color: #555;
+}
+
+.btn-dark:hover {
+    color: #fff;
+    background-color: #aaa;
+    border-color: #666;
+}
+
 #index-page {
     padding: 3px 15px;
 }
@@ -158,3 +195,11 @@ footer p{
 
 .navbar {
     height: 85px !important;
+
+
+
+
+
+
+
+

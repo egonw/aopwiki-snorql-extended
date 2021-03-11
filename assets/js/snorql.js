@@ -1,3 +1,4 @@
+
 var _endpoint = "https://aopwiki.rdf.bigcat-bioinformatics.org/sparql";
 var _examples_repo = "https://github.com/marvinm2/AOPWikiSNORQL";
 var _defaultGraph = "";
@@ -5,6 +6,7 @@ var _namespaces = snorql_namespacePrefixes;
 
 var _poweredByLink = 'https://github.com/marvinm2/aopwiki-snorql-extended';
 var _poweredByLabel = 'AOP-Wiki SNORQL';
+var _showLiteralType = false;
 
 function setCookie(cname, cvalue){
     var d = new Date();
@@ -158,7 +160,7 @@ function getIndexFromTree(segment, nodes){
     return null;
 }
 
-function fetchExamples() {
+function fetchExamples(suffix="") {
     var repo = jQuery("#examples-repo").val();
 
     if(repo.charAt(repo.length-1) == "/"){
@@ -180,7 +182,7 @@ function fetchExamples() {
 
             $.when(pager).then(function(){
 
-                $('#examples').treeview({
+                $('#examples'+suffix).treeview({
                     data: tree,
                     levels: 0,
                     expandIcon: 'glyphicon glyphicon-folder-close',
@@ -190,14 +192,14 @@ function fetchExamples() {
 
                         if(node.href.includes("https://raw.githubusercontent.com")){
                             jQuery.ajax({
-                				url: node.href,
-                				dataType: 'html',
-                				success:function(response){
-                				  editor.getDoc().setValue(response);
-                				}
-                			});
+                                                url: node.href,
+                                                dataType: 'html',
+                                                success:function(response){
+                                                  editor.getDoc().setValue(response);
+                                                }
+                                        });
                         }else{
-                          $('#examples').treeview('toggleNodeExpanded', [ node.nodeId, { silent: true } ]);
+                          $('#examples'+suffix).treeview('toggleNodeExpanded', [ node.nodeId, { silent: true } ]);
                         }
                     }
                 });
@@ -225,6 +227,7 @@ function start(){
     }
 
     fetchExamples();
+    fetchExamples("-fs");
 
     $('#poweredby').attr('href', _poweredByLink);
     $('#poweredby').text( _poweredByLabel);
@@ -284,8 +287,13 @@ function display(node, whereID) {
 function displayResult(json, resultTitle) {
 
     var div = document.createElement('div');
+    var resCount = document.createElement("small");
+    resCount.classList.add("text-muted");
+    resCount.appendChild(document.createTextNode(" ("+json.results.bindings.length+" results)"));
+
     var title = document.createElement('h3');
     title.appendChild(document.createTextNode(resultTitle));
+    title.appendChild(resCount);
     div.appendChild(title);
 
     if (json.results.bindings.length == 0) {
@@ -393,30 +401,35 @@ function nodeToHTML(node, linkMaker) {
     if (node.type == 'bnode') {
         return document.createTextNode('_:' + node.value);
     }
-    if (node.type == 'literal') {
-        var text = '"' + node.value + '"';
-        if (node['xml:lang']) {
-            text += '@' + node['xml:lang'];
-        }
-        return document.createTextNode(text);
-    }
-    if (node.type == 'typed-literal') {
-
-        var text = '"' + node.value + '"';
-
-        if (node.datatype) {
-            text += '^^' + toQNameOrURI(node.datatype);
-        }
-
-        for (i in numericXSDTypes) {
-            if (numericXSDTypes[i] == node.datatype) {
-                var span = document.createElement('span');
-                span.title = text;
-                span.appendChild(document.createTextNode(node.value));
-                return span;
+    if(_showLiteralType){
+        if (node.type == 'literal') {
+            var text = '"' + node.value + '"';
+            if (node['xml:lang']) {
+                text += '@' + node['xml:lang'];
             }
+            return document.createTextNode(text);
         }
-        return document.createTextNode(text);
+        if (node.type == 'typed-literal') {
+
+            var text = '"' + node.value + '"';
+
+            if (node.datatype) {
+                text += '^^' + toQNameOrURI(node.datatype);
+            }
+
+            for (i in numericXSDTypes) {
+                if (numericXSDTypes[i] == node.datatype) {
+                    var span = document.createElement('span');
+                    span.title = text;
+                    span.appendChild(document.createTextNode(node.value));
+                    return span;
+                }
+            }
+            return document.createTextNode(text);
+        }
+    }else{
+
+        return document.createTextNode(node.value);
     }
     return document.createTextNode('???');
 }
@@ -528,3 +541,8 @@ function formatData(input) {
 function onExportFailure(){
     alert("Export failed");
 }
+
+
+
+
+
