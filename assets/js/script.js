@@ -8,12 +8,12 @@ jQuery(document).ready(function() {
 
             $('#cookieModal').modal();
 
-            $('#cookieModal button.btn-secondary').on('click', function (e) {
+            $('#cookieModal button.btn-reset').on('click', function (e) {
                 setCookie("cookieDecision", "reject");
-                window.location.href = "https://aopwiki.org";
+                window.location.href = "https://aopwiki.rdf.bigcat-bioinformatics.org/cookies.html";
             });
 
-            $("#cookieModal button.btn-primary").on('click', function(){
+            $("#cookieModal button.btn-run").on('click', function(){
                 setCookie("cookieDecision", "accept");
                 $('#cookieModal').modal('hide');
             });

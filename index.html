@@ -76,11 +76,11 @@
                                         <div class="col-md-12">
                                                 <input id="query-button" type="button" class="btn btn-run" value="Query" />
                                                 <input id="reset-button" type="button" class="btn btn-reset" value="Reset" />
+                                                <input id="generate-permalink" type="button" class="btn btn-permalink" value="Get Permalink" />
                                                 Export as:  <input id="export-csv" type="button" class="btn btn-export" value="CSV" />
                                                 <input id="export-json" type="button" class="btn btn-export" value="JSON" />
                                                 <input id="export-xml" type="button" class="btn btn-export" value="XML" />
-                                                <input id="generate-permalink" type="button" class="btn btn-permalink" value="Get Permalink" />
-                                                <input id="enter-fullscreen" type="button" class="btn btn-permalink" value="Fullscreen Mode" />
+                                                <input id="enter-fullscreen" type="button" class="btn btn-fullscreen" value="Fullscreen Mode" />
                                         </div>
                                 </div>
 
@@ -93,7 +93,7 @@
                                                 <div class="input-group">
                                                         <input type="text" class="form-control" id="examples-repo" name="examples-repo" placeholder="Github Repositoty URL" onchange="changeExamplesRepo();">
                                                         <div class="input-group-btn">
-                                                                <button id="fetch" class="btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></button>
+                                                                <button id="fetch" class="btn btn-export"><i class="glyphicon glyphicon-refresh"></i></button>
                                                         </div>
                                                 </div>
                                   </div>
@@ -104,8 +104,8 @@
                                           <label for="input-search" class="sr-only">Search Tree:</label>
                                           <input type="input" class="form-control" id="input-search" placeholder="Type part of the query file name to search for..." value="">
                                         </div>
-                                        <button type="button" class="btn btn-success" id="btn-search">Search</button>
-                                        <button type="button" class="btn btn-default" id="btn-clear-search">Clear</button>
+                                        <button type="button" class="btn btn-run" id="btn-search">Search</button>
+                                        <button type="button" class="btn btn-fullscreen" id="btn-clear-search">Clear</button>
                                         <!-- </form> -->
                                         <hr/>
                                         <div class="list-group" id="examples"></div>
@@ -135,7 +135,7 @@
                 <div class="row">
                         <div class="col-md-12">
                                 <input id="exit-fullscreen" type="button" class="btn btn-reset" value="Exit Fullscreen" />
-                                <input id="examples-fullscreen" type="button" class="btn btn-export" value="Examples" />
+                                <input id="examples-fullscreen" type="button" class="btn btn-run" value="Examples" />
                         </div>
                 </div>
           </div>
@@ -188,8 +188,8 @@
                           <label for="input-search" class="sr-only">Search Tree:</label>
                           <input type="input" class="form-control" id="input-search-fs" placeholder="Type part of the query file name to search for..." value="">
                         </div>
-                        <button type="button" class="btn btn-run" id="btn-search-fs">Search</button>
-                        <button type="button" class="btn btn-fullscreen" id="btn-clear-search-fs">Clear</button>
+                        <button type="button" class="btn btn-success" id="btn-search-fs">Search</button>
+                        <button type="button" class="btn btn-default" id="btn-clear-search-fs">Clear</button>
                         <!-- </form> -->
                         <hr/>
                         <div class="list-group" id="examples-fs"></div>
@@ -201,14 +201,6 @@
         </div>
   </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
